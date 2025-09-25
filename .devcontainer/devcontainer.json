@@ -1,0 +1,23 @@
+{
+  "name": "LWC + Java 21 Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22.18.0"
+    },
+        "ghcr.io/devcontainers/features/python:1": {
+          "version": "3.13.5"
+        }
+    
+  },
+  "settings": {},
+  "extensions": [
+    "salesforce.salesforcedx-vscode",
+    "vscjava.vscode-java-pack"
+  ],
+  "forwardPorts": [],
+  "postCreateCommand": "npm install --prefix ~/.local --global @salesforce/cli && echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc && source ~/.bashrc && sf --version && java -version",
+  "remoteUser": "vscode"
+}
